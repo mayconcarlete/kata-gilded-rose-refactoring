@@ -20,38 +20,41 @@ Alternatively, use the "Text-Based" tests provided in this repository. (Read mor
 
 Whichever testing approach you choose, the idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice designing tests, taking small steps, running the tests often, and incrementally improving the design. 
 
-### Gilded Rose Requirements in other languages 
+======================================
+Gilded Rose Requirements Specification
+======================================
 
-- [English](GildedRoseRequirements.txt)
-- [Español](GildedRoseRequirements_es.md)
-- [Français](GildedRoseRequirements_fr.md)
-- [日本語](GildedRoseRequirements_jp.md)
-- [Português](GildedRoseRequirements_pt-BR.md)
-- [Русский](GildedRoseRequirements_ru.txt)
-- [ไทย](GildedRoseRequirements_th.md)
-- [中文](GildedRoseRequirements_zh.txt)
-- [한국어](GildedRoseRequirements_kr.md)
+Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a
+prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the finest goods.
+Unfortunately, our goods are constantly degrading in quality as they approach their sell by date. We
+have a system in place that updates our inventory for us. It was developed by a no-nonsense type named
+Leeroy, who has moved on to new adventures. Your task is to add the new feature to our system so that
+we can begin selling a new category of items. First an introduction to our system:
 
-## Text-Based Approval Testing
+	- All items have a SellIn value which denotes the number of days we have to sell the item
+	- All items have a Quality value which denotes how valuable the item is
+	- At the end of each day our system lowers both values for every item
 
-This code comes with comprehensive tests that use this approach. For information about how to run them, see the [texttests README](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/texttests)
+Pretty simple, right? Well this is where it gets interesting:
 
-## Translating this code
+	- Once the sell by date has passed, Quality degrades twice as fast
+	- The Quality of an item is never negative
+	- "Aged Brie" actually increases in Quality the older it gets
+	- The Quality of an item is never more than 50
+	- "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
+	- "Backstage passes", like aged brie, increases in Quality as its SellIn value approaches;
+	Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+	Quality drops to 0 after the concert
 
-More translations are most welcome! I'm very open for pull requests that translate the starting position into additional languages. 
+We have recently signed a supplier of conjured items. This requires an update to our system:
 
-Please note a translation should ideally include:
+	- "Conjured" items degrade in Quality twice as fast as normal items
 
-- a translation of the production code for 'update_quality' and Item
-- one failing unit test complaining that "fixme" != "foo"
-- a TextTest fixture, ie a command-line program that runs update_quality on the sample data for the number of days specified.
+Feel free to make any changes to the UpdateQuality method and add any new code as long as everything
+still works correctly. However, do not alter the Item class or Items property as those belong to the
+goblin in the corner who will insta-rage and one-shot you as he doesn't believe in shared code
+ownership (you can make the UpdateQuality method and Items property static if you like, we'll cover
+for you).
 
-Please don't write too much code in the starting position or add too many unit tests. The idea with the one failing unit test is to tempt people to work out how to fix it, discover it wasn't that hard, and now they understand what this test is doing they realize they can improve it.  
-
-If your programming language doesn't have an easy way to add a command-line interface, then the TextTest fixture is probably not necessary.
-
-## Better Code Hub
-
-I analysed this repo according to the clean code standards on [Better Code Hub](https://bettercodehub.com) just to get an independent opinion of how bad the code is. Perhaps unsurprisingly, the compliance score is low!
-
-[![BCH compliance](https://bettercodehub.com/edge/badge/emilybache/GildedRose-Refactoring-Kata?branch=master)](https://bettercodehub.com/) 
+Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a
+legendary item and as such its Quality is 80 and it never alters.
