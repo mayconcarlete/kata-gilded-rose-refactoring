@@ -12,6 +12,12 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(0)
     expect(items[0].sellIn).toBe(0)
   })
+  test('Should not return negative quality for Exilir of the Mongoose', () => {
+    const gildedRose: GildedRose = new GildedRose([new Item('Elixir of the Mongoose', 5, 0)])
+    const items: Item[] = gildedRose.updateQuality()
+    expect(items[0].quality).toBe(0)
+    expect(items[0].sellIn).toBe(4)
+  })
   test('Should increase quality for Aged Brie when a day pass', () => {
     const guildedRose: GildedRose = new GildedRose([new Item('Aged Brie', 1, 1)])
     const items: Item[] = guildedRose.updateQuality()
