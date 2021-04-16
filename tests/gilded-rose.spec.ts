@@ -12,6 +12,11 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(0)
     expect(items[0].sellIn).toBe(0)
   })
+  test('uality for +5 Dexterity Vest', () => {
+    const guildedRose: GildedRose = new GildedRose([new Item('+5 Dexterity Vest', -1, 3)])
+    const items: Item[] = guildedRose.updateQuality()
+    expect(items[0].quality).toBe(0)
+  })
   test('Should not return negative quality for Exilir of the Mongoose', () => {
     const gildedRose: GildedRose = new GildedRose([new Item('Elixir of the Mongoose', 5, 0)])
     const items: Item[] = gildedRose.updateQuality()
@@ -28,5 +33,10 @@ describe('Gilded Rose', function () {
     const items: Item[] = guildedRose.updateQuality()
     expect(items[0].quality).toBe(2)
     expect(items[0].sellIn).toBe(0)
+  })
+  test('Should nor return negative quality for Backstage Passes', () => {
+    const giledRose: GildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 11, 0)])
+    const items: Item[] = giledRose.updateQuality()
+    expect(items[0].quality).toBe(0)
   })
 })
