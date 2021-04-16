@@ -10,5 +10,12 @@ describe('Gilded Rose', function () {
     const guildedRose: GildedRose = new GildedRose([new Item('+5 Dexterity Vest', 1, 0)])
     const items: Item[] = guildedRose.updateQuality()
     expect(items[0].quality).toBe(0)
+    expect(items[0].sellIn).toBe(0)
+  })
+  test('Should increase quality for Aged Brie when a day pass', () => {
+    const guildedRose: GildedRose = new GildedRose([new Item('Aged Brie', 1, 1)])
+    const items: Item[] = guildedRose.updateQuality()
+    expect(items[0].quality).toBe(2)
+    expect(items[0].sellIn).toBe(0)
   })
 })
