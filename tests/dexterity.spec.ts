@@ -7,7 +7,7 @@ describe('+5 Dexterity Item', () => {
       expect(dexterityItem.quality).toBe(0)
       expect(dexterityItem.sellIn).toBe(0)        
     })
-    test('Should degrades  +5 Dexiterity Vest quality twice when sellIn is negative', () => {
+    test('Should degrades  +5 Dexiterity Vest quality twice when sellIn expires', () => {
        const dexterityItem:Dexterity = new Dexterity(-1, 1)
        dexterityItem.updateQuality()
        expect(dexterityItem.quality).toBe(0)
