@@ -6,9 +6,11 @@ export class Dexterity extends Item implements IUpdateQuality {
         super('+5 Dexterity Vest', sellIn, quality)
     }
     updateQuality(): void {
-        if(this.quality > 0){
+        if(this.quality > 0 && this.sellIn >= 0){
             this.quality -=1
         }
+        else if(this.quality > 0 && this.sellIn < 0 )
+            this.quality -= 2
         this.sellIn -=1
     }
 }
