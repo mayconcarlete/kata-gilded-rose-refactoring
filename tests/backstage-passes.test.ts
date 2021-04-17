@@ -13,10 +13,16 @@ describe('Backstage Passes Item', () => {
         expect(backstagedPasses.sellIn).toBe(4)
         expect(backstagedPasses.quality).toBe(13)
     })
-    test('Should not allow quality over than 50', () => {
+    test('Should not allow Backstaged Passes quality over than 50', () => {
         const backstagedPasses: BackstagedPasses = new BackstagedPasses(1, 49)
         backstagedPasses.updateQuality()
         expect(backstagedPasses.sellIn).toBe(0)
         expect(backstagedPasses.quality).toBe(50)
+    })
+    test('Should change Backstaged Passes quality to 0 when sellIn expires', () => {
+        const backstagedPasses: BackstagedPasses = new BackstagedPasses(-1, 50)
+        backstagedPasses.updateQuality()
+        expect(backstagedPasses.sellIn).toBe(-2)
+        expect(backstagedPasses.quality).toBe(0)
     })
 })
