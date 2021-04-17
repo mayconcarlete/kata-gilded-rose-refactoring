@@ -13,4 +13,10 @@ describe('Backstage Passes Item', () => {
         expect(backstagedPasses.sellIn).toBe(4)
         expect(backstagedPasses.quality).toBe(13)
     })
+    test('Should not allow quality over than 50', () => {
+        const backstagedPasses: BackstagedPasses = new BackstagedPasses(1, 49)
+        backstagedPasses.updateQuality()
+        expect(backstagedPasses.sellIn).toBe(0)
+        expect(backstagedPasses.quality).toBe(50)
+    })
 })
