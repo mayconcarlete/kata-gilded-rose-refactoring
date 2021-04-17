@@ -7,4 +7,10 @@ describe('Backstage Passes Item', () => {
         expect(backstagedPasses.sellIn).toBe(8)
         expect(backstagedPasses.quality).toBe(12)
     })
+    test('Should Backstaged Passes increase quality by 5 when sellIn is less than 6', () => {
+        const backstagedPasses: BackstagedPasses = new BackstagedPasses(5, 10)
+        backstagedPasses.updateQuality()
+        expect(backstagedPasses.sellIn).toBe(4)
+        expect(backstagedPasses.quality).toBe(13)
+    })
 })
