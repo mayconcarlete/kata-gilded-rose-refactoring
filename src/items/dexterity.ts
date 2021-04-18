@@ -1,7 +1,6 @@
-import { IUpdateQuality } from '../interfaces/update-quality'
 import { Item } from '../model/item'
 
-export class Dexterity extends Item implements IUpdateQuality {
+export class Dexterity extends Item {
   constructor (sellIn: number, quality: number) {
     super('+5 Dexterity Vest', sellIn, quality)
   }

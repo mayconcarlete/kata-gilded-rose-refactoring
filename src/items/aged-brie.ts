@@ -1,7 +1,6 @@
-import { IUpdateQuality } from '../interfaces/update-quality'
 import { Item } from '../model/item'
 
-export class AgedBrie extends Item implements IUpdateQuality {
+export class AgedBrie extends Item {
   constructor (sellIn: number, quality: number) {
     super('Aged Brie', sellIn, quality)
   }

@@ -1,7 +1,6 @@
-import { IUpdateQuality } from '../interfaces/update-quality'
 import { Item } from '../model/item'
 
-export class Conjured extends Item implements IUpdateQuality {
+export class Conjured extends Item{
   constructor (sellIn: number, quality: number) {
     super('Conjured', sellIn, quality)
   }

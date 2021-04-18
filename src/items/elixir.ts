@@ -1,7 +1,6 @@
-import { IUpdateQuality } from '../interfaces/update-quality'
 import { Item } from '../model/item'
 
-export class Elixir extends Item implements IUpdateQuality {
+export class Elixir extends Item {
   constructor (sellIn: number, quality: number) {
     super('Elixir of mongoose', sellIn, quality)
   }
