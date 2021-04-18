@@ -1,6 +1,6 @@
 import { Item } from '../model/item'
 
-export class Conjured extends Item{
+export class Conjured extends Item {
   constructor (sellIn: number, quality: number) {
     super('Conjured', sellIn, quality)
   }
