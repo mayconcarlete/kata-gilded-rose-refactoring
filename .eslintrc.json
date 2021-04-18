@@ -13,6 +13,7 @@
     "@typescript-eslint/no-namespace": "off",
     "import/export": "off",
     "@typescript-eslint/no-floating-promises": "off",
-    "valid-typeof": "off"
+    "valid-typeof": "off",
+    "@typescript-eslint/no-unused-expressions": "off"
   }
 }

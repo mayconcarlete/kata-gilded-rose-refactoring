@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "lint": "npx eslint --fix tests/**",
+    "lint:test": "npx eslint --fix tests/**",
+    "lint:src": "npx eslint --fix src/**",
     "dev": "ts-node-dev --respawn src/index.ts"
   },
   "repository": {
