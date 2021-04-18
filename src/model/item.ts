@@ -1,4 +1,4 @@
-import { IUpdateQuality } from "../interfaces/update-quality"
+import { IUpdateQuality } from '../interfaces/update-quality'
 
 export class Item implements IUpdateQuality {
   name: string
@@ -9,7 +9,8 @@ export class Item implements IUpdateQuality {
     this.sellIn = sellIn
     this.quality = quality
   }
-  updateQuality(){
+
+  updateQuality (): void {
     throw new Error('Not Implemented')
   }
 }
