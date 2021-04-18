@@ -1,4 +1,6 @@
-export class Item {
+import { IUpdateQuality } from "../interfaces/update-quality"
+
+export class Item implements IUpdateQuality {
   name: string
   sellIn: number
   quality: number
@@ -6,5 +8,8 @@ export class Item {
     this.name = name
     this.sellIn = sellIn
     this.quality = quality
+  }
+  updateQuality(){
+    throw new Error('Not Implemented')
   }
 }
