@@ -1,3 +1,3 @@
 export interface IUpdateQuality {
-    updateQuality(): void
+  updateQuality: () => void
 }
